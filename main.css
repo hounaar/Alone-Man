@@ -1,0 +1,81 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    background: black;
+}
+.container{
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: 300px;
+    height: 308px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+.headchar{
+    width: 50px;
+    height: 50px;
+    background: white;
+    position: relative;
+    border-radius: 50%;
+    left: 35px;
+    top: 20px;
+    animation: headchange 1s infinite 1.5s ease-in;
+}
+.bodychar{
+    width: 40px;
+    height: 100px;
+    background-color: white;
+    border-radius: 68px 10px 0 0;
+    animation: bodychange 1s infinite 1.5s ease-in;
+}
+
+.firstleg , .secondleg{
+    background-color: white;
+    width: 35px;
+    height: 10px;
+    border-radius: 20px 50px 50px 20px;
+    position: relative;
+    top: 55px;
+    left: 20px;
+    animation: walk 2s infinite linear;
+}
+.secondleg{
+    top: 25px;
+    animation-delay:1s !important;
+}
+.shadowchar{
+    width: 100px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    animation : shchange 1s infinite 1.5s ease-in;
+}
+@keyframes headchange {
+    0% { transform: translateY(0px);}
+    50% { transform: translateY(7px);}
+    100% { transform: translateY(0px);}
+}
+@keyframes bodychange {
+    0% { transform: translateY(0px);}
+    50% { transform: translateY(3px);}
+    100% { transform: translateY(0px);}
+}
+@keyframes walk{
+    0% { transform: translateX(8px) rotate(0deg)}
+    20% { transform: translateX(-28px) rotate(0deg)}
+    40% { transform: translate(-48px, 0px) rotate(8deg)}
+    60% { transform: translate(-38px, -18px) rotate(35deg)}
+    90% { transform: translate(18px, -7px) rotate(-35deg)}
+    100% { transform: translateX(8px);}
+}
+@keyframes shchange {
+    0% {width:100px}
+    50% {width:110px;}
+    100% { width:100px}
+}
